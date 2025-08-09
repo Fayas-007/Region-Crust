@@ -1,0 +1,235 @@
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: none;
+}
+
+/* Card header */
+.card-header {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 1.25rem 2rem;
+  border-bottom: none;
+  text-align: center;
+}
+
+/* Form labels */
+.form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 0.95rem;
+}
+
+/* Inputs and selects */
+.form-control,
+.form-select,
+textarea.form-control {
+  border-radius: 8px;
+  border: 1.5px solid #ced4da;
+  padding: 10px 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 6px rgba(40, 167, 69, 0.4);
+  outline: none;
+}
+
+/* Textarea height */
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Form rows */
+.row.g-3 > div {
+  margin-bottom: 1rem;
+}
+
+
+/* Alert messages */
+.alert {
+  border-radius: 10px;
+  padding: 15px 10px;
+  font-weight: 500;
+  font-size: 1rem
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+.alert-success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+/* Hide disabled selects */
+select[disabled] {
+  background-color: #e9ecef !important;
+  color: #6c757d !important;
+  cursor: not-allowed;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .container {
+    margin: 20px 10px;
+  }
+  .card-header {
+    font-size: 1.3rem;
+  }
+  .btn-success {
+    width: 100%;
+  }
+}
+
+  .main-panel {
+    margin-left: 280px !important; /* match the sidebar width */
+  }
+
+  .sidebar {
+  width: 280px !important; /* or 300px if you want more room */
+  white-space: nowrap;     /* Prevent text from wrapping */
+  overflow: hidden;        /* Optional: hides overflow text if needed */
+}
+
+.sidebar .nav li a p {
+  white-space: nowrap;     /* Prevent paragraph text (menu labels) from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Optional: adds "..." if the text overflows */
+}
+  @media (max-width: 991.98px) {
+  .sidebar {
+    transform: translateX(-250px);
+    transition: transform 0.3s ease;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .sidebar.sidebar-show {
+    transform: translateX(0);
+  }
+
+  .main-panel {
+    margin-left: 0 !important;
+  }
+}
+
+  .form-group input[type="file"] {
+    opacity: 1 !important;
+    position: static !important;
+    /* width: auto !important; */
+    height: auto !important;
+  }
+
+
+/* Toast box */
+#toast_box {
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 30px; /* Increased padding */
+    z-index: 10001;
+    pointer-events: none;
+}
+
+.toast {
+    width: 400px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 15px 0;
+    padding: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveLeft 0.4s linear forwards;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.toast::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 0 0 10px 10px;
+    background: #4caf50;
+    animation: anim 5s linear forwards;
+}
+
+i {
+    margin: 0 20px;
+    font-size: 30px;
+}
+
+.fa-check-circle {
+    color: #4caf50;
+}
+
+.fa-xmark-circle {
+    color: #f44336;
+}
+
+.fa-exclamation-circle {
+    color: #ffc107;
+}
+
+.toast.success {
+    background-color: #e8f5e9;
+}
+
+.toast.error {
+    background-color: #ffebef;
+}
+
+.toast.warning {
+    background-color: #fff8e1;
+}
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes moveLeft {
+    100% {
+        transform: translateX(0);
+    }
+}
+/* /Toast box */
